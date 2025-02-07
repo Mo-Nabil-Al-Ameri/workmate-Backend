@@ -42,12 +42,13 @@ INSTALLED_APPS = [
     
     #3rd Party :
     'rest_framework',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
+
     #My apps
     'accounts',
     'departments',
     'jobs',
-    'drf_spectacular',
-    'drf_spectacular_sidecar',
     # 'attendance',
     # 'leaves',
     # 'notifications',
