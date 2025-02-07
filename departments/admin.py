@@ -4,6 +4,6 @@ from .models import Department
 
 @admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'manager')
+    list_display = ('id','name', 'manager')
 
 # Register your models here.

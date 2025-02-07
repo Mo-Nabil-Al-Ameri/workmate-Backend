@@ -23,6 +23,6 @@ def send_verification_email(user):
     verification_url = f"http://127.0.0.1:8000/api/v1/accounts/verify-email/{token}/"
 
     subject = "تفعيل حسابك في الموقع"
-    message = f"مرحبًا {user.name},\n\nالرجاء النقر على الرابط التالي لتفعيل حسابك:\n\n{verification_url}\n\nإذا لم تقم بالتسجيل، يمكنك تجاهل هذه الرسالة."
+    message = f"مرحبًا {user.name}\n\nرقمك الوظيفي هو {user.employee_number},\n\nتم تسجيل حسابك في الموقع {user.name},\n\,\n\nالرجاء النقر على الرابط التالي لتفعيل حسابك:\n\n{verification_url}\n\nإذا لم تقم بالتسجيل، يمكنك تجاهل هذه الرسالة."
 
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user.email])

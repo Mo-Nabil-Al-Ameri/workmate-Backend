@@ -24,6 +24,11 @@ INSTALLED_APPS = [
 
     # Third-party apps
     'rest_framework',
+    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
+    'django_rest_passwordreset',
+    'django_filters',
+
     'drf_spectacular',
     'drf_spectacular_sidecar',
 
@@ -72,10 +77,15 @@ AUTH_USER_MODEL = 'accounts.User'
 
 # REST Framework
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'api.custom_schema.CustomSchemaGenerator',
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser',
+    ],
 }
 
 # JWT Authentication
@@ -115,6 +125,25 @@ SPECTACULAR_SETTINGS = {
     'TITLE': 'Workmate API',
     'DESCRIPTION': 'A comprehensive HR Management API.',
     'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': True,
+        'TAGS': [
+        {
+            'name': 'Accounts',
+            'description': 'Accounts related operations',
+        
+        },
+        {
+            'name': 'Departments',
+            'description': 'Departments related operations',
+        
+        },
+        {
+            'name': 'Jobs',
+            'description': 'Jobs related operations',
+        
+        },
+    ],
+
 }
 
 ENV_FILE = os.path.join(Path(__file__).resolve().parent.parent.parent, '.env')

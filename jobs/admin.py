@@ -3,7 +3,7 @@ from .models import Job
 
 @admin.register(Job)
 class JobsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'default_salary', 'short_description')  # عرض الحقول في القائمة
+    list_display = ('id','title', 'default_salary', 'short_description')  # عرض الحقول في القائمة
     search_fields = ('title', 'description')  # تمكين البحث في العنوان والوصف
     list_filter = ('default_salary',)  # تمكين الفلترة حسب الراتب الافتراضي
     ordering = ('title',)  # ترتيب السجلات حسب العنوان
