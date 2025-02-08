@@ -4,7 +4,7 @@ from .base import *
 DEBUG = True
 
 # Allowed Hosts
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.172.163']
 
 # Database (SQLite)
 DATABASES = {

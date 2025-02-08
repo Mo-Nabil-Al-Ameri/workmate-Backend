@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'departments',
     'jobs',
     'api',
+    'attendant',
+    'task',
+    'leave',
+    'messagingapp',
+    'notifications',
 ]
 
 MIDDLEWARE = [
@@ -140,6 +145,31 @@ SPECTACULAR_SETTINGS = {
         {
             'name': 'Jobs',
             'description': 'Jobs related operations',
+        
+        },
+        {
+            'name': 'Notifications',
+            'description': 'notifications related operations',
+        
+        },
+        {
+            'name': 'Messages',
+            'description': 'messages related operations',
+        
+        },
+        {
+            'name': 'Leaves',
+            'description': 'leave related operations',
+        
+        },
+        {
+            'name': 'Tasks',
+            'description': 'Tasks related operations',
+        
+        },
+        {
+            'name': 'Attendants',
+            'description': 'attendant related operations',
         
         },
     ],

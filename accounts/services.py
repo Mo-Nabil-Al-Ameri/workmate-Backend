@@ -29,7 +29,8 @@ def user_update(
         user.phone = phone
     if role is not None:
         user.role = role
-        user.g
+        user.groups.clear()
+        user.groups.add(Group.objects.get(name=role))
     if salary:
         user.salary = salary
     if department:
